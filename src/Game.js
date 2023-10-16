@@ -1,5 +1,6 @@
 import player from './Player.js'
 import InputHandler from './InputHanler.js'
+import UserInterface from './UserInterface.js'
 export default class Game {
   constructor(width, height) {
     this.Input = new InputHandler(this)
