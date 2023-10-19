@@ -1,6 +1,7 @@
 
 import InputHandler from "./InputHanler";
 import Projectile from "./Constructor";
+import UserInterface from "./UserInterface";
 export default class Player {
     constructor(game) {
         this.game = game;
@@ -52,6 +53,12 @@ export default class Player {
         this.projectiles.forEach((projectile) => {
             projectile.draw(context)
         })
+        if (this.game.debug) {
+            context.strokeRect(this.x, this.y, this.width, this.height)
+            context.fillstyle = 'black'
+            context.font = '12px Arial'
+            context.fillText(this.frameX, this.x, this.y -5)
+         }
     }
     shoot() {
         this.projectiles.push(

@@ -1,3 +1,4 @@
+
 Vecka.41
 
 Måndag: Jag har skapat en consturctor somskriver ut en röd rectangle som sedan kommer kunna röra sig men har inte provat det.
@@ -7,3 +8,24 @@ Tisdag: Jag har gjort en Eventlistener som skriver ut hur det rör sig. Hade pro
 reda på det i slutet av lektionen. Nu rör min rectangle hur jag vill använda den genom att använda pillarna 
 
 Torsdag: Jag har nu gjort en shooter, Hade problem med koden men mest att det vara baras på ställe och jag har slarv skrivist så jag råla t.ex skriva thsi isället för this.
+
+Vad gjorde jag sist?
+Jag gjorde en shooter där jag trycker space så skjuter den ut små skot 
+Hur gick det?
+Det gick bra till jag fastande för jag visste först inte vars jag skulle he if statsen
+Vad ska jag göra idag?
+Jag ska hålla på me UserInterface
+Vad behöver jag lära mig?
+Mer vars jag ska he alla koder och inte bara gissa vad som är felet och isället fårga 
+Vad behöver jag av jens?
+Inte så mycket just nu 
+
+Vecka.42
+
+Måndag: Jag gjorde en Userinterface idag. Håll på leka lite med koden och se vad jag kunde lägga till i den. Satt fast lite med vars jag skulle he koden men fick hjälp så jag är mer säker på vars koderna så sitta nu.
+
+
+Tisdag + torsdag: Jag blev nyss klar med Enemy och timer. hade ett problem som jag inte visste hur jag skulle fixa. Men fixade det efter en stund tänkade(10min ungefär)
+Hade inte så mycket problem förutom att jag glömmer alltid bort vars jag ska he koderna eftersom jag glömmer att läsa texten innan jag he in koden 
+
+
