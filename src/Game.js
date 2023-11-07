@@ -1,33 +1,56 @@
-import player from './Player.js'
+import Slime from './Slime.js'
 import InputHandler from './InputHanler.js'
+import Player from './Player.js'
 import UserInterface from './UserInterface.js'
+import Platform from './Platform.js'
 export default class Game {
   constructor(width, height) {
-    this.Input = new InputHandler(this)
-    this.keys = []
     this.width = width
     this.height = height
+    this.input = new InputHandler(this)
+    this.ui = new UserInterface(this)
+    this.keys = []
     this.enemies = []
     this.gameOver = false
     this.gravity = 1
     this.debug = false
-    this.player = new player(this)
-    this.speedX = 1
-    this.speedY = 0
+    this.gameTime = 0
+    this.enemyTimer = 0
+    this.enemyInterval = 1000
 
+    this.player = new Player(this)
+
+    this.platforms = [
+      new Platform(this, 0, this.ground, this.width, 100),
+      new Platform(this, this.width - 200, 280, 200, 20),
+      new Platform(this, 200, 200, 300, 20),
+    ]
   }
 
   update(deltaTime) {
     if (!this.gameOver) {
       this.gameTime += deltaTime
-      this.player.update(deltaTime)
-
     }
+    this.player.update(deltaTime)
+
+    if (this.enemyTimer > this.enemyInterval && !this.gameOver) {
+      this.addEnemy()
+      this.enemyTimer = 0
+    } else {
+      this.enemyTimer += deltaTime
+    }
+
+    this.enemies.forEach((enemy) => enemy.update(deltaTime))
+    this.enemies = this.enemies.filter((enemy) => !enemy.markedForDeletion)
   }
 
   draw(context) {
-    context.fillStyle = 'f#00';
-    context.fillRect(this.x, this.y, this.width, this.height)
+    this.ui.draw(context)
     this.player.draw(context)
+    this.enemies.forEach((enemy) => enemy.draw(context))
+  }
+
+  addEnemy() {
+    this.enemies.push(new Slime(this))
   }
 }
