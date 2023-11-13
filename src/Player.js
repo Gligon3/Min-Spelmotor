@@ -6,7 +6,7 @@ export default class Player {
     this.width = 32
     this.height = 64
     this.x = 50
-    this.y = 100
+    this.y = 320
 
     this.frameX = 0
 
@@ -26,13 +26,18 @@ export default class Player {
       this.speedX = 0
     }
 
-    if (this.game.keys.includes('ArrowUp')) {
-      this.speedY = -this.maxSpeed
-    } else if (this.game.keys.includes('ArrowDown')) {
-      this.speedY = this.maxSpeed
-    } else {
+    if (this.grounded) {
       this.speedY = 0
+    } else {
+      this.speedY += this.game.gravity
     }
+    if (this.grounded) {
+      this.speedY = 0
+    } else {
+      this.speedY += this.game.gravity
+    }
+    
+    this.y += this.speedY
 
     this.y += this.speedY
     this.x += this.speedX
@@ -60,6 +65,13 @@ export default class Player {
       context.font = '12px Arial'
       context.fillText(this.frameX, this.x, this.y - 5)
     }
+    if (this.grounded) {
+      this.speedY = 0
+    } else {
+      this.speedY += this.game.gravity
+    }
+    
+    this.y += this.speedY
   }
 
   shoot() {
@@ -68,3 +80,4 @@ export default class Player {
     )
   }
 }
+

@@ -38,3 +38,7 @@ vecka.45
 Tisdag: Jag försökte fixa min plat from medans jag höll på med kollisons. Gick inte super bra eftersom när jag la till kollisions så försvan platforms.
 Så jag kommer att behöva fixa det till nästa gång.
 
+vecka.46
+
+Måndag: Jag fixade allt med platforms och kollisions så det funkar. Men när jag trycker på D så fryser allt och jag kan inte forsätta med spelet. 
+Det jag kommer behöva göra nästa gång vi har webbutvekling är att fixa D knappen och fixa en till platform som min spelare kan stå på.

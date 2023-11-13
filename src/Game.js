@@ -2,6 +2,7 @@ import Slime from './Slime.js'
 import InputHandler from './InputHanler.js'
 import Player from './Player.js'
 import UserInterface from './UserInterface.js'
+import Platform from './Platform.js'
 export default class Game {
   constructor(width, height) {
     this.width = width
@@ -10,7 +11,7 @@ export default class Game {
     this.ui = new UserInterface(this)
     this.keys = []
     this.gameOver = false
-    this.gravity = 1
+    this.gravity = 0
     this.debug = false
     this.gameTime = 0
 
@@ -19,7 +20,14 @@ export default class Game {
     this.enemyInterval = 1000
 
     this.player = new Player(this)
+    
+    this.platforms = [
+      new Platform(this, 0, this.ground, this.width, 100),
+      new Platform(this, this.width - 200, 280, 200, 20),
+      new Platform(this, 200, 200, 300, 20),
+    ]
   }
+  
 
   update(deltaTime) {
     if (!this.gameOver) {
@@ -47,12 +55,26 @@ export default class Game {
       })
     })
     this.enemies = this.enemies.filter((enemy) => !enemy.markedForDeletion)
+    this.platforms.forEach((platform) => {
+      if (this.checkPlatformCollision(this.player, platform)) {
+        this.player.speedY = 0
+        this.player.y = platform.y - this.player.height
+        this.player.grounded = true
+      }
+      this.enemies.forEach((enemy) => {
+        if (this.checkPlatformCollision(enemy, platform)) {
+          enemy.speedY = 0
+          enemy.y = platform.y - enemy.height
+        }
+      })
+    })
   }
 
   draw(context) {
     this.ui.draw(context)
     this.player.draw(context)
     this.enemies.forEach((enemy) => enemy.draw(context))
+    this.platforms.forEach((platform) => platform.draw(context))
   }
 
   addEnemy() {
@@ -67,7 +89,6 @@ export default class Game {
       object1.height + object1.y > object2.y
     )
   }
-
   checkPlatformCollision(object, platform) {
     if (
       object.y + object.height >= platform.y &&
@@ -87,5 +108,5 @@ export default class Game {
       }
       return false
     }
-  }
+  } 
 }
