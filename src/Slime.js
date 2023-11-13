@@ -1,5 +1,6 @@
 import Enemy from './Enemy'
 
+
 export default class Slime extends Enemy {
   constructor(game) {
     super(game)

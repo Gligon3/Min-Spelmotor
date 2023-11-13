@@ -2,7 +2,6 @@ import Slime from './Slime.js'
 import InputHandler from './InputHanler.js'
 import Player from './Player.js'
 import UserInterface from './UserInterface.js'
-import Platform from './Platform.js'
 export default class Game {
   constructor(width, height) {
     this.width = width
@@ -10,21 +9,16 @@ export default class Game {
     this.input = new InputHandler(this)
     this.ui = new UserInterface(this)
     this.keys = []
-    this.enemies = []
     this.gameOver = false
     this.gravity = 1
     this.debug = false
     this.gameTime = 0
+
+    this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 1000
 
     this.player = new Player(this)
-
-    this.platforms = [
-      new Platform(this, 0, this.ground, this.width, 100),
-      new Platform(this, this.width - 200, 280, 200, 20),
-      new Platform(this, 200, 200, 300, 20),
-    ]
   }
 
   update(deltaTime) {
@@ -40,7 +34,18 @@ export default class Game {
       this.enemyTimer += deltaTime
     }
 
-    this.enemies.forEach((enemy) => enemy.update(deltaTime))
+    this.enemies.forEach((enemy) => {
+      enemy.update(deltaTime)
+      if (this.checkCollision(this.player, enemy)) {
+        enemy.markedForDeletion = true
+      }
+      this.player.projectiles.forEach((projectile) => {
+        if (this.checkCollision(projectile, enemy)) {
+          enemy.markedForDeletion = true
+          projectile.markedForDeletion = true
+        }
+      })
+    })
     this.enemies = this.enemies.filter((enemy) => !enemy.markedForDeletion)
   }
 
@@ -52,5 +57,35 @@ export default class Game {
 
   addEnemy() {
     this.enemies.push(new Slime(this))
+  }
+
+  checkCollision(object1, object2) {
+    return (
+      object1.x < object2.x + object2.width &&
+      object1.x + object1.width > object2.x &&
+      object1.y < object2.y + object2.height &&
+      object1.height + object1.y > object2.y
+    )
+  }
+
+  checkPlatformCollision(object, platform) {
+    if (
+      object.y + object.height >= platform.y &&
+      object.y < platform.y &&
+      object.x + object.width >= platform.x &&
+      object.x <= platform.x + platform.width
+    ) {
+      if (object.grounded && object.y + object.height > platform.y) {
+        object.speedY = 0
+        object.y = platform.y - object.height
+        object.grounded = true
+      }
+      return true
+    } else {
+      if (object.grounded && object.y + object.height < platform.y) {
+        object.grounded = false
+      }
+      return false
+    }
   }
 }
