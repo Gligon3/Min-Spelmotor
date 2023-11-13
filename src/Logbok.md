@@ -1,4 +1,5 @@
 
+
 Vecka.41
 
 Måndag: Jag har skapat en consturctor somskriver ut en röd rectangle som sedan kommer kunna röra sig men har inte provat det.
@@ -26,6 +27,14 @@ Måndag: Jag gjorde en Userinterface idag. Håll på leka lite med koden och se 
 
 
 Tisdag + torsdag: Jag blev nyss klar med Enemy och timer. hade ett problem som jag inte visste hur jag skulle fixa. Men fixade det efter en stund tänkade(10min ungefär)
-Hade inte så mycket problem förutom att jag glömmer alltid bort vars jag ska he koderna eftersom jag glömmer att läsa texten innan jag he in koden 
+Hade inte så mycket problem förutom att jag glömmer alltid bort vars jag ska he koderna eftersom jag glömmer att läsa texten innan jag he in koden
 
+Vecka.43
+
+Måndag: jag har försökt göra platformes men det har inte gått så super bra. Ska forsätta på tisdag och blir klar med det. Om jag blir klar med det snabbt så kommer jag hjar hålla på med collisons och försöka bli klar med det:D 
+
+vecka.45 
+
+Tisdag: Jag försökte fixa min plat from medans jag höll på med kollisons. Gick inte super bra eftersom när jag la till kollisions så försvan platforms.
+Så jag kommer att behöva fixa det till nästa gång.
 
