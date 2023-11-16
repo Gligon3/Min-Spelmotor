@@ -1,4 +1,5 @@
 import Projectile from './Projectile.js'
+import spriteImage from './assets/Idle Run (78x58).png'
 
 export default class Player {
   constructor(game) {
@@ -15,6 +16,10 @@ export default class Player {
     this.speedX = 0
     this.speedY = 0
     this.maxSpeed = 10
+    
+    const image = new Image()
+    image.src = spriteImage
+    this.image = image
   }
 
   update(deltaTime) {

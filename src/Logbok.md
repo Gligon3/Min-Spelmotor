@@ -42,3 +42,6 @@ vecka.46
 
 Måndag: Jag fixade allt med platforms och kollisions så det funkar. Men när jag trycker på D så fryser allt och jag kan inte forsätta med spelet. 
 Det jag kommer behöva göra nästa gång vi har webbutvekling är att fixa D knappen och fixa en till platform som min spelare kan stå på.
+
+torsdag: Jag har laggt in en image som ska funka men den vill inte vissa på min sida så jag kommer att behöva fixa det tills nästa gång.
+Ska börja he in min grafik från Es21 nästa lektion och hoppas det blir klart.

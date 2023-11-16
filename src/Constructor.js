@@ -10,6 +10,14 @@ export default class Projectile {
         this.damage = 1
         this.markedForDeletion = false
         this.ammo = 10
+        this.frameX = 0
+        this.frameY = 1
+        this.maxFrame = 8
+        this.fps = 20
+        this.timer = 0
+        this.interval = 1000 / this.fps
+
+        this.flip = false
     }
 
     update(){
@@ -21,6 +29,24 @@ export default class Projectile {
     draw(context) {
         context.fillStyle = '#ff0'
         context.fillRect(this.x, this.y, this.width, this.height)
+        if (this.flip) {
+            context.save()
+            context.scale(-1, 1)
+        }
+        
+        context.drawImage(
+            this.image,
+            this.frameX * this.width,
+            this.frameY * this.height -14,
+            this.width,
+            this.height,
+            this.flip ? this.x * -1 - this.width : this.x,
+            this.y,
+            this.width,
+            this.height,
+        )
+
+        context.restore()
     }
 
     shoot() {
