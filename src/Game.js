@@ -3,6 +3,7 @@ import InputHandler from './InputHanler.js'
 import Player from './Player.js'
 import UserInterface from './UserInterface.js'
 import Platform from './Platform.js'
+import Background from './Background.js'
 export default class Game {
   constructor(width, height) {
     this.width = width
@@ -11,9 +12,11 @@ export default class Game {
     this.ui = new UserInterface(this)
     this.keys = []
     this.gameOver = false
-    this.gravity = 0
+    this.gravity = 1
     this.debug = false
     this.gameTime = 0
+    this.background = new Background(this)
+    this.speed = 1
 
     this.enemies = []
     this.enemyTimer = 0
@@ -25,6 +28,7 @@ export default class Game {
       new Platform(this, 0, this.ground, this.width, 100),
       new Platform(this, this.width - 200, 280, 200, 20),
       new Platform(this, 200, 200, 300, 20),
+      new Platform(this, 0, 370, 1000, 200),
     ]
   }
   
@@ -71,6 +75,7 @@ export default class Game {
   }
 
   draw(context) {
+    this.background.draw(context)
     this.ui.draw(context)
     this.player.draw(context)
     this.enemies.forEach((enemy) => enemy.draw(context))

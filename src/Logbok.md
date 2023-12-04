@@ -45,3 +45,13 @@ Det jag kommer behöva göra nästa gång vi har webbutvekling är att fixa D kn
 
 torsdag: Jag har laggt in en image som ska funka men den vill inte vissa på min sida så jag kommer att behöva fixa det tills nästa gång.
 Ska börja he in min grafik från Es21 nästa lektion och hoppas det blir klart.
+
+Vecka.48 
+
+Torsdag: Jga har fixad en till platform som spelare och enemys kommer kunna stå på. Håller på med att fixa min grafik/sprites men har inte fått min player att visa spriten.
+Så till nästa gång kommer jag behöva lägga in mina sprites och fixa jump koden. Jobbandet idag har väl gått helt okej. Haft det lite tufft med sprites för jag visste inte vars jag skulle hitta dom men fick reda på det ganska snabbt.
+
+vecka.49
+
+Måndag: Jag ahr lagt in 1 sprite och jag fixade och med platforms. Hade lite problem med hur jag skulle lägga in spritesen ibörjan. Men fick reda på det senare i lektionen.
+Jag har haft problem med att veta vars jag ska he allt men det går fram

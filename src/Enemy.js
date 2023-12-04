@@ -5,6 +5,7 @@ export default class Enemy {
     this.y = 0
     this.speedX = 0
     this.markedForDeletion = false
+    this.gravity = 1
   }
 
   update() {
@@ -26,4 +27,4 @@ export default class Enemy {
       context.fillText(`y: ${this.y.toFixed()}`, this.x + 20, this.y - 20)
     }
   }
-}
+} 
