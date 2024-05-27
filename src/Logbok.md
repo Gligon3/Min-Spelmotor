@@ -53,5 +53,5 @@ Så till nästa gång kommer jag behöva lägga in mina sprites och fixa jump ko
 
 vecka.49
 
-Måndag: Jag ahr lagt in 1 sprite och jag fixade och med platforms. Hade lite problem med hur jag skulle lägga in spritesen ibörjan. Men fick reda på det senare i lektionen.
+Måndag: Jag har lagt in 1 sprite och jag fixade och med platforms. Hade lite problem med hur jag skulle lägga in spritesen ibörjan. Men fick reda på det senare i lektionen.
 Jag har haft problem med att veta vars jag ska he allt men det går fram
