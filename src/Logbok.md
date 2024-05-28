@@ -53,5 +53,20 @@ Så till nästa gång kommer jag behöva lägga in mina sprites och fixa jump ko
 
 vecka.49
 
-Måndag: Jag ahr lagt in 1 sprite och jag fixade och med platforms. Hade lite problem med hur jag skulle lägga in spritesen ibörjan. Men fick reda på det senare i lektionen.
+Måndag: Jag harr lagt in 1 sprite och jag fixade och med platforms. Hade lite problem med hur jag skulle lägga in spritesen ibörjan. Men fick reda på det senare i lektionen.
 Jag har haft problem med att veta vars jag ska he allt men det går fram
+
+Vecka.20
+
+Måndag: Kommer att försöka fixa min gravitet så det rammlar ner iställer för det ska flyga upp i luften eftersom min spelar ska inte behöva flyga, Efter det så kommer jag och försöka fixa mitt hoppande eftersom min spelare hoppar inte.
+
+Måndag efter lektionen: Jag fixade mitt glitch med graviteten och va nära på att fixa hopp coden.
+
+Tisdag: jag fixade jump knappen idag och nu håller jag på med High score. Efter high score är klar så borde mitt spel va klart o lämnas in.
+Idag är allt fixad förutom att jag har inte fixat highscore än. Men det borde bli fixat på torsdag eller under helgen.
+
+Torsdag: Kolla igenom din kod o försöker förstå hur jag ska kunna fixa highscore in till mitt spel.
+
+Vecka.22 
+ 
+Tisdag: jag 6är klar o lämnar in splet idag.

@@ -4,6 +4,8 @@ import Player from './Player.js'
 import UserInterface from './UserInterface.js'
 import Platform from './Platform.js'
 import Background from './Background.js'
+import Enemy from './Enemy.js'
+import Projectile from './Constructor.js'
 export default class Game {
   constructor(width, height) {
     this.width = width
@@ -14,24 +16,25 @@ export default class Game {
     this.gameOver = false
     this.gravity = 1
     this.debug = false
-    this.gameTime = 0
+    this.gameTime = 300
     this.background = new Background(this)
-    this.speed = 1
+
+    this.score = []
 
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 1000
 
     this.player = new Player(this)
-    
+
     this.platforms = [
       new Platform(this, 0, this.ground, this.width, 100),
       new Platform(this, this.width - 200, 280, 200, 20),
-      new Platform(this, 200, 200, 300, 20),
+      new Platform(this, this.height - 200, 200, 270, 20),
       new Platform(this, 0, 370, 1000, 200),
     ]
   }
-  
+
 
   update(deltaTime) {
     if (!this.gameOver) {
@@ -41,7 +44,7 @@ export default class Game {
 
     if (this.enemyTimer > this.enemyInterval && !this.gameOver) {
       this.addEnemy()
-      this.enemyTimer = 0
+      this.enemyTimer = 0,3
     } else {
       this.enemyTimer += deltaTime
     }
@@ -113,5 +116,5 @@ export default class Game {
       }
       return false
     }
-  } 
+  }
 }

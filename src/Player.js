@@ -7,19 +7,25 @@ export default class Player {
     this.width = 32
     this.height = 64
     this.x = 50
-    this.y = 320
+    this.y = 330
+    this.fps = 30
 
     this.frameX = 0
 
     this.projectiles = []
-
+    
     this.speedX = 0
     this.speedY = 0
-    this.maxSpeed = 10
+    this.maxSpeed = 10    
+    this.jumpSpeed = 40 
+    this.ground = false
+    
     
     const image = new Image()
     image.src = spriteImage
     this.image = image
+
+    console.log()
   }
 
   update(deltaTime) {
@@ -27,8 +33,20 @@ export default class Player {
       this.speedX = -this.maxSpeed
     } else if (this.game.keys.includes('ArrowRight')) {
       this.speedX = this.maxSpeed
+    } else if (this.game.keys.includes('ArrowUp')) {
+      this.speedY = this.jumpSpeed
+      console.log(this.speedY)
+    } else if (this.game.keys.includes('ArrowDown')) {
+      this.speedY = -this.jumpSpeed  
     } else {
       this.speedX = 0
+    }
+
+    if (this.game.keys.includes('ArrowUp') && this.grounded) {
+    this.speedY = -this.jumpSpeed
+    this.grounded = false
+    } else {
+      this.speedY = 0
     }
 
     if (this.grounded) {
@@ -36,12 +54,6 @@ export default class Player {
     } else {
       this.speedY += this.game.gravity
     }
-    if (this.grounded) {
-      this.speedY = 0
-    } else {
-      this.speedY += this.game.gravity
-    }
-    
     this.y += this.speedY
 
     this.y += this.speedY

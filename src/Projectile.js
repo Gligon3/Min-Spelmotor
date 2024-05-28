@@ -1,13 +1,13 @@
 export default class Projectile {
   constructor(game, x, y) {
     this.game = game
-    this.width = 4
+    this.width = 10
     this.height = 4
     this.x = x
     this.y = y
 
     this.speed = 5
-    this.damage = 1
+    this.damage = 2
     this.markedForDeletion = false
   }
 
@@ -23,4 +23,3 @@ export default class Projectile {
     context.fillRect(this.x, this.y, this.width, this.height)
   }
 }
-  

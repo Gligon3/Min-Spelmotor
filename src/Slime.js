@@ -1,6 +1,5 @@
 import Enemy from './Enemy'
 
-
 export default class Slime extends Enemy {
   constructor(game) {
     super(game)
@@ -9,6 +8,6 @@ export default class Slime extends Enemy {
     this.x = this.game.width
     this.y = Math.random() * (this.game.height * 0.9 - this.height)
     this.speedX = Math.random() * -1.5 - 0.5
-    this.lives = 2
+    this.lives = 0
   }
 }
